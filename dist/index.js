@@ -55,7 +55,7 @@ function parseWorkflowRun(run) {
     var _a, _b, _c;
     const treeHash = (_a = run.head_commit) === null || _a === void 0 ? void 0 : _a.tree_id;
     if (!treeHash) {
-        logFatal(`Could not find the tree hash of run ${run} (run ${run.id}, "${run.name}"). You might have a headless commit.`);
+        logFatal(`Could not find the tree hash of run ${run.id} (workflow ${run.workflow_id} "${run.name}", head_branch: ${run.head_branch}, head_sha: ${run.head_sha}). You might have a headless commit.`);
     }
     const workflowId = run.workflow_id;
     if (!workflowId) {
